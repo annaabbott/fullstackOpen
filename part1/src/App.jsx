@@ -1,16 +1,24 @@
 import React from "react";
 
-const Header = (props) => {
-  return <h1>{props.course}</h1>;
+const Header = ({ course }) => {
+  return <h1>{course}</h1>;
 };
 
-const Content = (props) => {
+const Part = ({ part, exercise }) => {
   return (
     <p>
-      {props.part1} {props.exercise1}
-      {props.part2} {props.exercise2}
-      {props.part3} {props.exercise3}
+      {part} {exercise}
     </p>
+  );
+};
+
+const Content = ({ part1, exercise1, part2, exercise2, part3, exercise3 }) => {
+  return (
+    <div>
+      <Part part={part1} exercise={exercise1} />
+      <Part part={part2} exercise={exercise2} />
+      <Part part={part3} exercise={exercise3} />
+    </div>
   );
 };
 
